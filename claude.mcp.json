@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "mcp-stdin": {
+      "command": "node",
+      "args": ["path/dist/index.js"],
+      "env": {}
+    }
+  }
+}
