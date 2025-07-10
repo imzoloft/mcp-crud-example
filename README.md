@@ -1,6 +1,6 @@
-# MCP MVP - Modular Control Panel
+# MCP MVP - Model Context Protocol
 
-A TypeScript implementation of a Modular Control Panel (MCP) demonstrating interface-driven architecture with dependency injection and LLM-compatible service discovery.
+A TypeScript implementation of a Model Context Protocol (MCP) demonstrating interface-driven architecture with dependency injection and LLM-compatible service discovery.
 
 ## Overview
 
