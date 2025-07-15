@@ -1,8 +1,10 @@
-# MCP MVP - Model Context Protocol
+## <h3>MCP CRUD Example</h3>
 
-A TypeScript implementation of a Model Context Protocol (MCP) demonstrating interface-driven architecture with dependency injection and LLM-compatible service discovery.
+<h6>TypeScript implementation of a Modular Control Panel (MCP) with interface-driven architecture and dependency injection</h6>
 
-## Overview
+---
+
+<h4>Overview</h4>
 
 This project implements a complete MCP system that:
 - Performs CRUD operations through an injected `IApi` interface
@@ -10,7 +12,7 @@ This project implements a complete MCP system that:
 - Registers tools with MCP SDK for service discovery
 - Demonstrates clean architecture with interface swapping capability
 
-## Key Features
+<h4>Key Features</h4>
 
 - **Interface-Driven Design**: All external dependencies injected via interfaces
 - **Dependency Injection**: InversifyJS manages all service dependencies
@@ -18,126 +20,48 @@ This project implements a complete MCP system that:
 - **Mock Implementation**: In-memory storage for testing without external systems
 - **LLM Compatibility**: All services include descriptive metadata
 
-## Project Structure
-
-```
-src/
-  interfaces/     # Contract definitions
-  services/       # Service implementations
-  types/          # DI symbols and shared types
-  inversify.config.ts  # DI container setup
-  index.ts        # Entry point
-examples/         # Usage demonstrations
-tests/            # Basic test suite
-```
-
-## Installation
+<h4>Installation & Usage</h4>
 
 ```bash
+# Install dependencies
 npm install
-```
 
-## Build
-
-```bash
+# Build the project
 npm run build
-```
 
-## Usage
-
-### Start MCP Server
-
-```bash
+# Start MCP server
 npm start
-```
 
-The server runs with stdio transport, accepting commands via stdin and responding via stdout.
-
-### Run Examples
-
-**Basic CRUD Operations:**
-```bash
+# Run examples
 npm run example:crud
-```
-
-**Interface Swapping Demo:**
-```bash
 npm run example:swap
 ```
 
-## Architecture
+<h4>Architecture Highlights</h4>
 
-### Dependency Injection
+- **Dependency Injection**: All services use constructor injection via InversifyJS
+- **Available Tools**: create, get, list, update, delete - all with proper validation
+- **Interface Swapping**: Easy implementation switching through DI container
+- **Clean Code**: Modular structure with separated concerns
 
-All services use constructor injection via InversifyJS:
+<h4>Future Enhancements</h4>
 
-```typescript
-@injectable()
-export class MCP {
-  constructor(@inject(TYPES.IApi) private api: IApi) {
-    // Service setup
-  }
-}
-```
+- Add real database implementations (PostgreSQL, MongoDB)
+- Implement authentication and authorization
+- Add WebSocket transport support
+- Create comprehensive test suite
+- Build UI dashboard for visual tool management
 
-### Available Tools
+<h4>Support me</h4>
 
-The MCP server registers the following tools:
+- Thanks for looking at this repository, if you like to press the ⭐ button!
+- Made by [imzoloft](https://github.com/imzoloft).
 
-- **create**: Create a new resource
-- **get**: Retrieve a resource by ID
-- **list**: List resources with optional filtering
-- **update**: Update an existing resource
-- **delete**: Delete a resource
-
-Each tool includes:
-- Descriptive title and description
-- Input schema validation using Zod
-- Proper error handling
-- MCP-formatted responses
-
-### Interface Swapping
-
-The DI container allows easy swapping of implementations:
-
-```typescript
-// Default binding
-container.bind<IApi>(TYPES.IApi).to(MockApi);
-
-// Swap to different implementation
-container.rebind<IApi>(TYPES.IApi).to(AlternativeApi);
-```
-
-## Development
-
-### TypeScript Configuration
-
-The project requires these TypeScript settings for InversifyJS:
-- `experimentalDecorators: true`
-- `emitDecoratorMetadata: true`
-
-### Adding New Tools
-
-1. Define the tool in `MCP.ts` using `registerTool()`
-2. Implement the handler delegating to `IApi`
-3. Include proper error handling
-4. Return MCP content format
-
-### Creating Alternative Implementations
-
-1. Implement the `IApi` interface
-2. Add `@injectable()` decorator
-3. Bind in the DI container
-4. Swap as needed
-
-## Future Migration
-
-This MVP is designed for easy migration to other platforms:
-- All business logic is interface-driven
-- No hardcoded dependencies
-- Ready for .NET SDK compatibility
-- Modular architecture supports microservices
-
-## License
-
-ISC
+<p align="center">
+    <b>Informations</b><br>
+    <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/imzoloft/mcp-crud-example?color=fff">
+    <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/imzoloft/mcp-crud-example?color=fff">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/imzoloft/mcp-crud-example?color=fff">
+    <img alt="GitHub" src="https://img.shields.io/github/license/imzoloft/mcp-crud-example?color=fff">
+    <img alt="GitHub watchers" src="https://img.shields.io/github/watchers/imzoloft/mcp-crud-example?color=fff">
+</p>
