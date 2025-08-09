@@ -4,6 +4,12 @@
 
 ---
 
+<p>
+    <img src="https://www.descope.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fxqb1f63q68s1%2F2x3R1j8peZzdnweb5m1RK3%2Fa8628561358334a605e7f291560fc7cc%2FMCP_learning_center_image_1-min__1_.png&w=1920&q=75" alt="preview" width="250px"/>
+</p>
+
+---
+
 <h4>Overview</h4>
 
 This project implements a complete MCP system that:
